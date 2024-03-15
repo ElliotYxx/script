@@ -1,0 +1,7 @@
+# 微信消息推送
+PUSH_TOKEN = '60056febc89449e9bc731b52f5b08c8c'
+
+# 汇率接口api
+EXCHANGE_RATE_API_KEY = '930aaca076d1d331ab0fc78f92918656'
+# 澳元汇率告警阈值
+AUD_EXCHANGE_ALERT_VALUE = 4.68
