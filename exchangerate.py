@@ -15,7 +15,8 @@ def get_exchangerate(currFrom: str = 'AUD', currTo: str = 'CNY'):
     # 如果获取失败
     if response.status_code != 200:
         logging.info("request error")
-        return 0
+        send_email("exchange rate error")
+        return []
     return response.json()['result']
 
 
@@ -35,6 +36,7 @@ def send_email(msg: str):
 def main():
     data = get_exchangerate()
     if len(data) == 0:
+        send_email("exchange rate result empty")
         return
     exchange = float(data[0]['exchange'])
     if exchange < config.AUD_EXCHANGE_ALERT_VALUE:
