@@ -39,6 +39,7 @@ def main():
         send_email("exchange rate result empty")
         return
     exchange = float(data[0]['exchange'])
+    print(f'AUD -> CNY 汇率: {exchange}')
     if exchange < config.AUD_EXCHANGE_ALERT_VALUE:
         send_email(f'AUD -> CNY 汇率: {exchange}')
 
